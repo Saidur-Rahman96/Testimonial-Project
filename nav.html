@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .navbar {
+  display: flex;
+  justify-content: space-between; /* লোগো বামে আর মেনু ডানে পাঠাবে */
+  align-items: center; /* লম্বালম্বিভাবে মাঝখানে রাখবে */
+  padding: 20px 50px;
+  background-color: #333; /* গাঢ় ব্যাকগ্রাউন্ড */
+  color: white;
+  
+}
+
+.nav-links {
+  display: flex; /* লিস্টের আইটেমগুলোকে পাশাপাশি আনবে */
+  list-style: none; /* ডটগুলো মুছে দিবে */
+}
+
+.nav-links li {
+  margin-left: 20px; /* প্রতিটি মেনুর মাঝে গ্যাপ তৈরি করবে */
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none; /* নিচের আন্ডারলাইন মুছে দিবে */
+  font-weight: bold;
+  transition: 0.3s; /* অ্যানিমেশন স্মুথ করবে */
+}
+.nav-links li a:hover {
+  color: #ff6347; /* হোভার করলে রঙ পরিবর্তন হবে */
+
+}
+.hero-btn:hover {
+  transform: scale(1.1); /* বাটনটি ১০% বড় হবে */
+  background-color: #ff4b2b;
+  transition: 0.3s;
+}
+.hero{
+  height: 100vh; /* পুরো ভিউপোর্ট উচ্চতা নেবে */
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1500'); /* ব্যাকগ্রাউন্ড ইমেজ ও কালার ওভারলে */
+  background-size: cover; /* ইমেজ পুরো এলাকা ঢেকে যাবে */
+  background-position: center; /* ইমেজ সেন্টারে থাকবে */
+  display: flex; /* ফ্লেক্সবক্স ব্যবহার করবে */
+  justify-content: center; /* অনুভূমিকভাবে মাঝখানে রাখবে */
+  align-items: center; /* উল্লম্বভাবে মাঝখানে রাখবে */
+  color: white;
+background-image: url('B Ground.png');
+  text-align: center;
+  background-position: top center;
+  
+}
+.photo-container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  height: auto;
+  width: 100%;
+}
+.photo img{
+transition: transform 0.5s ease;  
+}
+.photo img:hover {
+    transform: scale(1.1); /* ১০% জুম হবে */
+}
+.photo {
+    overflow: hidden; /* যাতে জুম হওয়ার সময় ছবি বক্সের বাইরে না বের হয় */
+    border-radius: 10px;
+}
+.photo img {
+    width: 100%;
+    height: 300px; /* তোমার পছন্দমতো হাইট */
+    object-fit: contain; /* পুরো ছবি দেখাবে, কাটবে না */
+    background-color: #f0f0f0; /* খালি জায়গায় হালকা কালার দেখাবে */
+}
+* {
+  box-sizing: border-box;
+}
+.contact-section {
+  padding: 50px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.contact-form button:hover {
+    background-color: #ff4b2b;
+}
+.services {
+  padding: 50px;
+  background-color: #fff;
+  text-align: center;
+}
+.service-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.service-item {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+}
+.service-item h3 {
+    margin-bottom: 10px;
+    }
+     .service-item p:hover {
+    color: #ff4b2b;
+    transition: 0.3s;
+    }
+    
+.testimonials {
+  padding: 50px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+.testimonial-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.testimonial-item {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+}
+.testimonial-item p {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+.testimonial-item h4 {
+    text-align: right;
+    color: #333;
+}
+
+.feedback::before {
+    content: "\201C"; /* এটি উদ্ধৃতি চিহ্নের কোড */
+    font-size: 50px;
+    color: #ccc;
+    display: block;
+    margin-bottom: -20px;
+}
+    </style>
+</head>
+<body>
+   <nav class="navbar">
+  <div class="logo">MyLogo</div>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Welcome to My Website</h1>
+    <p>I am a developer who loves building beautiful websites.</p>
+    <button class="hero-btn">Explore My Work</button>
+  </div>
+</section>
+
+<div class="photo-container">
+  <div class="photo">
+    <img src="photo1.jpg" alt="photo 1">
+  </div>
+  <div class="photo">
+    <img src="photo2.jpg" alt="photo 2">
+  </div>
+  <div class="photo">
+    <img src="photo3.PNG" alt="photo 3">
+  </div>
+
+</div>
+
+< class="contact-section">
+  <h2>Contact Me</h2>
+   <form class="contact-form">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+
+   </form>
+
+   <section class="services">
+  <h2>My Services</h2>
+  <div class="service-list">
+    <div class="service-item">
+      <h3>Web Development</h3>
+      <p>I create responsive and modern websites using the latest technologies.</p>
+    </div>
+    <div class="service-item">
+      <h3>UI/UX Design</h3>
+      <p>I design user-friendly interfaces that provide a great user experience.</p>
+    </div>
+    <div class="service-item">
+      <h3>SEO Optimization</h3>
+      <p>I optimize websites to rank higher in search engine results and attract more visitors.</p>
+    </div>
+  </div>
+
+   </section>
+  
+   <section class="testimonials">
+    <h2>Testimonials</h2>
+    <p>Here are what my clients say about me:</p>
+    <div class="testimonial-list">
+      <div class="testimonial-item">
+        <div class="client-img">
+        <img src="Tursha.png" alt="Tursha" style="width: 50px; height: 50px; border-radius: 50%;">
+      </div>
+        <p class="feedback">"This developer is amazing! They created a stunning website for my business."</p>
+        <h4>- Tursha</h4>
+      </div>
+      <div class="testimonial-item">
+        <div class="client-img">
+        <img src="Tursha.png" alt="Tursha" style="width: 50px; height: 50px; border-radius: 50%;">
+      </div>
+        <p class="feedback">"I highly recommend this developer. They are professional and easy to work with."</p>
+        <h4>- Tuhin</h4>
+      </div>
+      <div class="testimonial-item">
+        <div class="client-img">
+        <img src="Tursha.png" alt="Tursha" style="width: 50px; height: 50px; border-radius: 50%;">
+      </div>
+        <p class="feedback">"The website they built for me has helped my business grow significantly."</p>
+        <h4>- David</h4>
+      </div>
+    </div>
+   </section>
+</body>
+</html>
